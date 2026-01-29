@@ -1,0 +1,5 @@
+{
+  "name": "CyberGuardian",
+  "description": "A user-friendly cybersecurity assistant providing real-time analysis of scams, UPI payments, and fake profiles to protect everyday users.",
+  "requestFramePermissions": []
+}
