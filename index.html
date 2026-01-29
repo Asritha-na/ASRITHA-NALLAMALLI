@@ -7,19 +7,66 @@
     <title>CyberGuardian - Your Digital Shield</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-      body { font-family: 'Inter', sans-serif; }
+      :root {
+        --primary: #6366f1;
+        --secondary: #a855f7;
+        --accent: #22d3ee;
+        --danger: #ef4444;
+        --safe: #10b981;
+        --warning: #f59e0b;
+        --bg-dark: #020617;
+      }
+      body { 
+        font-family: 'Plus Jakarta Sans', sans-serif; 
+        background-color: var(--bg-dark);
+        color: #f1f5f9;
+        overflow-x: hidden;
+      }
       .gradient-bg {
-        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        background: radial-gradient(circle at top right, #1e1b4b, #020617),
+                    radial-gradient(circle at bottom left, #0f172a, #020617);
       }
       .glass-card {
         background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
       }
-      .danger-glow {
-        box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+      .neon-border {
+        box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+      }
+      .danger-pulse {
+        animation: pulse-red 2s infinite;
+      }
+      @keyframes pulse-red {
+        0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+        70% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+      }
+      .security-ring {
+        transition: stroke-dashoffset 1s ease-out;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      
+      .active-scale:active { transform: scale(0.95); }
+      
+      /* Smooth Page Transitions */
+      .page-enter {
+        animation: slideUp 0.4s ease-out forwards;
+      }
+      @keyframes slideUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Risk Meter Animation */
+      @keyframes fillMeter {
+        from { width: 0%; }
+        to { width: var(--fill-width); }
       }
     </style>
   <script type="importmap">
@@ -33,7 +80,7 @@
 }
 </script>
 </head>
-  <body class="bg-slate-950 text-slate-100 min-h-screen">
+  <body class="gradient-bg min-h-screen">
     <div id="root"></div>
   </body>
 </html>

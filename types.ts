@@ -21,7 +21,7 @@ export interface SafetyTip {
 export interface HistoryEntry {
   id: string;
   timestamp: number;
-  type: 'message' | 'upi' | 'profile';
+  type: 'message' | 'upi' | 'profile' | 'phone';
   input: string;
   result: AnalysisResult;
 }
@@ -41,4 +41,4 @@ export interface UserBadge {
   color: string;
 }
 
-export type Page = 'home' | 'scam-check' | 'upi-check' | 'profile-check' | 'emergency' | 'awareness' | 'history' | 'queries';
+export type Page = 'home' | 'scam-check' | 'upi-check' | 'profile-check' | 'phone-check' | 'report-number' | 'emergency' | 'awareness' | 'history' | 'queries';
